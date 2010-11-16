@@ -1,0 +1,37 @@
+<div id="sign_in">
+    <ul>
+	<li><a href="javascript:void(0);" id="dialog_link" >test</a></li>
+	<li><a href="/home">Home</a></li>
+	<% if session[:user_id] != "" &&  session[:user_id] != nil  %>
+        <li><a href="/login/logout">Logout</a></li>
+	<% else %>
+	<!--<li><a id="opener-login" href="/login/login">Login</a></li>-->
+	<li><a id="opener-login" href="javascript:void(0);">Login</a></li>
+	<li><a id="opener-register" href="javascript:void(0);">Register</a></li>
+	<!--<li><a href="/users/new">Register</a></li>-->
+	<% end %>
+        <li><input type="text" class="txt" value="Search" /></li>
+    </ul>
+</div>
+<div class="complogo">
+	<p><span class="fli_bold">FAST LINE INFO<br /></span><span class="fli_small">Information Management System</span></p>
+</div>
+<div id="main_nav">
+    <!-- Main Navigation -->
+    <ul id="nav">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/posts">Blogs</a></li>
+        <li><a href="/posts?type=article">Articles</a></li>
+        <li><a href="/home/services">Services</a>
+	 <li><a href="/home/article">Services</a>
+		<!--<ul>
+		<li>Patient Portal</li>
+		<li>Immunization Reminder</li>
+		<li>Agriculture</li>
+		</ul>-->
+	</li>
+	<li><a href="/home/about">About Us</a></li>
+        <li><a href="/home/contact">Contact</a></li>
+	<li><a href="/login/ftp">FTP</a></li>
+    </ul>
+</div>	

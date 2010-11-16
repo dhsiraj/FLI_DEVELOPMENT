@@ -1,0 +1,19 @@
+<div id="content-inner">
+<div class="content-right">
+<% @feedbacks.each do |feedback| %>
+	
+	<h2><%=h feedback.feedback_title %></h2>
+  <h3 class="dateline"><%=h feedback.user.username %> on &nbsp;&nbsp;<%=feedback.created_at%>&nbsp;&nbsp; From IP &nbsp;&nbsp;<%=h feedback.ip_address %> </h3>
+   <p class="intro"><%=h feedback.feedback_detail %></p>
+   <p class="end-story-links"><%= link_to 'Show', feedback %>
+   <% if getusertype == 'Admin' %>
+   | <%= link_to 'Edit', edit_feedback_path(feedback) %> |
+   <%= link_to 'Destroy', feedback, :confirm => 'Are you sure?', :method => :delete %>
+   <% end %>   
+   </p>
+<% end %>
+<br />
+<%= link_to 'New Feedback', new_feedback_path %>
+</div>
+</div>
+

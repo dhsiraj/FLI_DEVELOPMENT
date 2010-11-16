@@ -1,0 +1,478 @@
+/*
+Company:	Nautica X - ost.org
+File:		main.css - This contains all the main styles for the website.
+
+All the styles are separted into the following groups:
+Global Browser Reset - they make sure that all browsers start with the same default settings
+HTML, Body - for the html and body tags
+Layout - any style that defines how the site is laid out (position and size of objects)
+Nav - navigation bar
+Headings - headings like h1, h2, etc
+Text Styles - Styles for text
+Lists - unordered and ordered lists
+Forms - html forms
+Links - links
+Misc - anything that doesn't fit elsewhere
+*/
+
+/* @group Global Browser Reset */
+* {
+
+padding:0;
+
+margin:0;
+
+}
+
+h1, h2, h3, h4, h5, h6, pre, blockquote, dl, address { margin:20px 0; }
+
+dd, blockquote { margin-left: 40px; }
+
+/*fieldset { padding:10px; }*/
+
+img { border: 0px; }
+/* @end */
+
+/* @group HTML, Body */
+body {
+	/*text-align: center;
+	font-size: 1em;
+	font-family: Verdana, sans-serif;*/
+	font: 80.5% "Trebuchet MS", sans-serif; margin: 5px;
+}
+/* @end */
+
+/* @group Headings */
+h1 { }
+h2 {
+	margin: 0 0 0 0;
+	font-family: "Times New Roman", serif;
+	font-weight: lighter;
+	font-size: 1.6em;
+	color: #464031;
+}
+h3.dateline {
+	font-size: .8em;
+	font-weight: lighter;
+	color: #dc3409;
+	margin: 0 0 10px 0;
+}
+h4 {
+	margin-left: 25px;
+	margin-right: 10px;
+	text-transform: uppercase;
+	font-weight: lighter;
+	margin-bottom: 10px;
+	font-family: "Times New Roman", serif;
+	color: #a1a09b;
+}
+h5 { }
+h6 { }
+/* @end */
+
+p.intro:first-letter {
+	font-size: 1.4em;
+	letter-spacing: -1px;
+}
+
+/* @group Layout */
+div#outer-wrapper {
+	/*background: url(../images/body-bkg.gif) repeat-y top center;*/
+	
+}
+div#inner-wrapper {
+	/*background: url(../images/header-bkg.gif) repeat-x;*/
+}
+div#header {
+	clear: both;
+	border-top: 1px solid #5e534f;
+	background-color: #e7e5d2;
+	/*padding: 10px;*/
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div#main_nav {
+	clear: both;
+	padding-top: 5px;
+}
+div#comp_logo {
+	/*padding: 5px;
+	width: 180px;
+	border: 1px solid #fff;*/
+}
+
+.complogo p {
+	/*background-color: #DE3408;
+	margin: 4px 0 0 0 !important;
+	color: #fff;
+	text-align: left;
+	font-family: "Times New Roman", serif;
+	padding: 2px;
+	font-size: 1.1em;
+	border: 1px solid #fff;
+	width: 218px;*/
+	font-family: "Times New Roman", serif;
+	padding: 8px;
+	background: #f6a828 url(images/ui-bg_gloss-wave_35_f6a828_500x100.png) repeat-x;
+}
+.fli_bold {
+	font-size: 1.8em;
+}
+
+.fli_small {
+	font-size: 1em;
+}
+
+div#content-wrapper {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+div#logo {
+	/*background: url(../images/logo-box-bkg.gif) no-repeat;*/
+	width: 194px;
+	height: 225px;
+	margin-top: 4px;
+	text-align: center;
+}
+div#logo img {
+	margin-top: 85px;
+}
+div#sidebar {
+	float: left;
+	width: 210px;
+	display: inline;
+}
+div#content {
+	float: right;
+	width: 730px;
+	margin-right: 30px;
+	display: inline;
+}
+div#content-inner {
+	margin-top: 20px;
+	padding: 1px 0;
+	/*background: url(../images/leaf-watermark.gif) no-repeat bottom right;*/
+}
+div.content-left {
+	padding: 4px;
+	width: 218px;
+	background-color: #d7d7d7;
+	float: left;
+	display: inline;
+}
+div.content-left img {
+	border: 1px solid #fff;
+}
+div.content-left p {
+	background-color: #f6a828;
+	margin: 4px 0 0 0 !important;
+	color: #fff;
+	text-align: center;
+	font-family: "Times New Roman", serif;
+	padding: 2px;
+	font-size: 1.3em;
+	border: 1px solid #fff;
+	/*background: #f6a828 url(images/ui-bg_gloss-wave_35_f6a828_500x100.png) repeat-x;*/
+}
+div.content-left p span {
+	font-size: .8em;
+}
+div.content-right {
+	float: left;
+	margin-left: 20px;
+	width: 484px;
+	display: inline;
+}
+
+div.content-right h2 {
+	margin: 0 0 0 0;
+	font-family: "Times New Roman", serif;
+	font-weight: lighter;
+	font-size: 1.9em;
+	color: #464031;
+}
+
+div.content-right h3.dateline {
+	font-size: 1.2em;
+	font-weight: lighter;
+	color: #dc3409;
+	margin: 0 0 10px 0;
+	font-family: "Times New Roman", serif;
+}
+
+div.content-right p.intro {
+	font-size: 1.2em;
+	/*font-family: "Trebuchet MS", sans-serif; margin: 5px;*/
+}
+
+div.content-right p.intro:first-letter {
+	font-size: 2.0em;
+	letter-spacing: -1px;
+	font-family: "Times New Roman", serif;
+}
+
+div.content-full {
+	clear: both;
+	padding-top: 15px;
+}
+p.end-story-links {
+	border-bottom: 4px solid #d1b9b3;
+	margin-bottom: 15px !important;
+	font-size: .8em;
+}
+div#footer {
+	clear: both;
+	border-top: 1px solid #5e534f;
+	background-color: #e7e5d2;
+	padding: 10px;
+}
+
+img.content-img {
+	float: left;
+	border: 2px solid #ccc;
+	margin: 0 10px 10px 0;
+}
+
+/* @end */
+div#sign_in {
+	/*clear: both;*/
+	padding-top: 1px;
+	/*vertical-align:text-top;*/
+/*	border: 1px solid #fff;*/
+}
+
+/* @group Nav */
+div#sign_in ul {
+	float: right;
+	/*margin: 0 0 15px 0;*/
+	height: 25px;
+	/*line-height: 25px;*/
+/*	font-size: 1.2em;*/
+	font-family: "Times New Roman", serif;
+	/*overflow: hidden;*/
+	font-size: 0.80em;
+	/*vertical-align: text-top;*/
+/*	border: 1px solid #fff;*/
+	
+}
+div#sign_in ul li {
+	display: inline;
+	list-style-type: none;
+	text-transform: uppercase;
+	margin: 0 20px 0 0;
+}
+div#sign_in ul li a:link, ul#nav li a:visited {
+	color: #8A0000;
+	text-decoration: none;
+}
+div#sign_in ul li a:hover {
+	color: #4B4A45;
+}
+
+div#main_nav ul {
+	margin: 0 0 20px 0;
+	height: 25px;
+	line-height: 25px;
+	font-size: 0.9em;
+	font-family: "Times New Roman", serif;
+	overflow: hidden;
+	border-right: 1px solid #736749;
+	border-left: 1px solid #736749;
+	border-bottom: 1px solid #736749;
+	border-top: 1px solid #736749;
+	/*background-color: #9F9575;*/
+	background-color: #DBDCCB;
+	width: 1000px;
+}
+div#main_nav ul li {
+	display: inline;
+	list-style-type: none;
+	/*text-transform: uppercase;*/
+	margin: 0 20px 0 0;
+	padding-left:25px;
+}
+div#main_nav ul li a:link, ul#nav li a:visited {
+	color: #621C17;
+	text-decoration: none;
+	font-weight: bold;
+}
+div#main_nav ul li a:hover {
+	color: #3f3e3a;
+}
+
+div#sidebar ul {
+	margin: 10px 5px 10px 17px;
+	border-top: 1px solid #e9e7e7;
+	font-size: .7em;
+	color: #978f7c;
+	text-transform: uppercase;
+}
+div#sidebar ul li {
+	margin: 0;
+	list-style-type: none;
+	padding: 1px 0;
+}
+div#sidebar ul li a {
+	display: block;
+	border-bottom: 1px solid #e9e7e7;
+	margin: 0;
+	padding: 10px 0 10px 20px;
+	/*background: url(../images/side-nav-bullet.gif) no-repeat 5px 50%;*/
+}
+div#sidebar ul li a:link, ul.side-nav li a:visited {
+	color: #978f7c;
+	text-decoration: none;
+}
+div#sidebar ul li a:hover {
+	/*background: url(../images/side-nav-bullet-light.gif) no-repeat 5px 50% #f6f5f0;*/
+	color: #cac6ba;
+}
+
+div#footer ul {
+	font-family: "Times New Roman", serif;
+	font-size: .7em;
+	text-transform: uppercase;
+	margin: 0 0 10px 0;
+	vertical-align:middle;
+	text-align: center;
+	
+}
+div#footer ul li {
+	display: inline;
+	margin: 0;
+	padding: 0 10px 0 5px;
+	border-right: 1px solid #958d83;
+	text-align: center;
+}
+div#footer ul li.last {
+	border-right: none;
+	text-align: center;
+}
+div#footer ul li a:link, ul#footer-nav li a:visited {
+	color: #5e534f;
+	text-decoration: none;
+}
+div#footer ul li a:hover {
+	color: #453e3b;
+}
+/* @end */
+
+
+
+/* @group Text Styles */
+div#content-inner {
+	font-size: .75em;
+	color: #929291;
+	/*line-height: 1.7em;*/
+}
+div#content-inner p {
+	margin: 2px 0 30px 0;
+}
+
+p.copyright {
+	font-size: .65em;
+	font-family: "Times New Roman", serif;
+	color: #797069;
+	text-transform: uppercase;
+	margin: 10px 0;
+	text-align: center;
+}
+/* @end */
+
+/* @group Lists */
+	
+/* @end */
+
+/* @group Forms */
+form#search-form {
+	/*width: 150px;*/
+	float: right;
+	margin: 0px 0 0 0;
+	border-right: 1px solid #736749;
+	border-left: 1px solid #736749;
+	border-bottom: 1px solid #736749;
+	border-top: 1px solid #736749;
+}
+form#search-form input.txt {
+	width: 140px;
+	/*border: 1px solid #736749;*/
+	/*border-top: 4px solid #635534;*/
+	border: none;
+	margin: 0;
+	padding: 2px;
+	background-color: #dbd6c9;
+	color: #fff;
+	text-transform: uppercase;
+}
+/* @end */
+
+/* @group Links - link visited hover active */
+div#content-inner a:link, div#content-inner a:visited {
+	color: #8b7f73;
+	text-decoration: none;
+	border-bottom: 1px dotted #8b7f73;
+}
+div#content-inner a:hover {
+	color: #706153;
+	border-bottom: 1px dotted #706153;
+}
+
+p.end-story-links a:link, p.end-story-links a:visited {
+	color: #8b7f73;
+	text-decoration: none;
+	border-bottom: none !important;
+}
+
+p.copyright a:link, p.copyright a:visited {
+	color: #797069;
+	text-decoration: none;
+}
+p.copyright a:hover {
+	color: #453e3b;
+}
+/* @end */
+
+/* @group Misc */
+.clear {
+	clear: both;
+}
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+.omega_m1{
+	margin-top: 5px !important;
+	margin-bottom: 5px !important;
+	/*margin-left: 150px !important;*/
+}
+
+/*
+label, input[type="text"]{
+    float:left;
+    display:block;
+}
+
+label
+{
+    margin-right: 5px;
+}
+.field{
+    width:100%;
+    overflow:auto;
+    margin:5px 0px;
+}
+*/
+.clearfix {display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+/* @end */

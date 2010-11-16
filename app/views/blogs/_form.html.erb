@@ -1,0 +1,45 @@
+<%= form_for(@blog) do |f| %>
+  <% if @blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+
+      <ul>
+      <% @blog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<fieldset>
+<legend>New post</legend>
+<ol>
+ <li>
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+</li>
+<li>
+    <%= f.label :blog_title %>
+    <%= f.text_field :blog_title, :size => 70 %>
+</li>
+<li>
+    <%= f.label :blog_desc %>
+    <%= f.text_area :blog_desc, :size => "70x3"  %>
+</li>
+<li>
+    <%= f.label :blog_detail %>
+    <%= f.text_area:blog_detail, :size => "70x20" %>
+ </li>
+ <!--<li>
+    <%= f.label :posted_on %>
+    <%= f.datetime_select :posted_on %>
+</li>-->
+<li>
+	<fieldset>
+	  <% if getusertype == 'Admin' %>
+    <%= f.submit %>
+	  <% end %>
+	</fieldset>
+</li>
+</ol>
+</fieldset>
+<% end %>

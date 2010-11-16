@@ -1,0 +1,82 @@
+<div style="display:none">
+<div id='dialog-login' title='Login'>
+<%= form_tag do %>
+<fieldset>
+	<div id="login_message" class="omega_m1"></div>
+	
+	<ol>
+		<li>
+			<label class="customLoginlabel" for="name">Name:</label>
+			<%= text_field_tag :user_name, params[:user_name] %>
+		</li>
+		<li>
+			<label class="customLoginlabel" for="password">Password:</label>
+			<%= password_field_tag :login_password, params[:password] %>
+		</li>
+	</ol>
+</fieldset>
+<% end %>
+</div>
+
+<!-- ui-dialog -->
+<div id="dialog1" title="Dialog Title" align="left">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+</div>
+
+<!-- registration -->
+<div id="dialog-register" title="Register">
+<%= form_tag do %>
+		<fieldset>
+			<div id="register_message" class="omega_m1"></div>
+			<ol>
+				<li>
+					<label class="customLoginlabel" for="name">User Name<em>*</em></label>
+					<%= text_field_tag :register_name, params[:user_name] %>
+					<a href="javascript:voi(0);" onclick="return checkAvailability();">
+	  				<button id="checkusername" class="fg-button ui-state-default ui-corner-all" type="button" value="check" tabindex="6">Check Availability</button>
+	  				</a>
+
+				</li>
+				<li>
+					<label class="customLoginlabel" for="password">Password<em>*</em></label>
+					<%= text_field_tag :password, params[:password] %>
+				</li>
+				<li>
+					<label class="customLoginlabel" for="password_confirmation">Confirm Password<em>*</em></label>
+					<%= text_field_tag :password_confirmation, params[:password_confirmation] %>
+					
+				</li>
+				<li>
+					<label class="customLoginlabel" for="user_email">Email<em>*</em></label>
+					<%= text_field_tag :email, params[:email] %>
+					
+				</li>
+				<li>
+					<%= hidden_field_tag :ip_address, params[:ip_address] %>
+				</li>
+				<!--<li>
+					<label class="customLoginlabel" for="user_mobile">Mobile<em>*</em></label>
+					<%= text_field_tag :mobile, params[:mobile] %>
+				</li>
+				<li>
+					<label class="customLoginlabel" for="user_mariatalStatus">Marital Status<em>*</em></label>
+					<%= text_field_tag :mariatalStatus, params[:mariatalStatus] %>
+				</li>
+				<li>
+					<label class="customLoginlabel" for="user_country">Country<em>*</em></label>
+					<%= text_field_tag :country, params[:country] %>
+				</li>
+				<li>
+				<label class="customLoginlabel" for="user_city">City<em>*</em></label>
+					<%= text_field_tag :city, params[:city] %>
+				</li>-->
+				
+			</ol>
+		</fieldset>
+	<% end %>
+
+</div>
+<!-- registration end -->
+
+</div>

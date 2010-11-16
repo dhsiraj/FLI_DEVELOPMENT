@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @feedback.user_id %>
+</p>
+
+<p>
+  <b>Feedback title:</b>
+  <%= @feedback.feedback_title %>
+</p>
+
+<p>
+  <b>Feedback detail:</b>
+  <%= @feedback.feedback_detail %>
+</p>
+
+<p>
+  <b>Ip address:</b>
+  <%= @feedback.ip_address %>
+</p>
+
+<% if getusertype == 'Admin' %>
+<%= link_to 'Edit', edit_feedback_path(@feedback) %> |
+<% end %>
+<%= link_to 'Back', feedbacks_path %>

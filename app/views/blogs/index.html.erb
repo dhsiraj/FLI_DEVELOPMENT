@@ -1,0 +1,20 @@
+<div id="content-inner">
+<div class="content-right">
+<% @blogs.each do |blog| %>
+	
+	<h2><%=h blog.blog_title %></h2>
+  <h3 class="dateline"><%=h blog.user.username %> on &nbsp;&nbsp;<%=blog.posted_on%></h3>
+   <p class="intro"><%=h blog.blog_desc %></p>
+   <p class="end-story-links"><%= link_to 'Show', blog %>
+   <% if getusertype == 'Admin' %>
+	| <%= link_to 'Edit', edit_blog_path(blog) %> |
+   <%= link_to 'Destroy', blog, :confirm => 'Are you sure?', :method => :delete %></p>
+   <% end %>
+<% end %>
+<br />
+ <% if getusertype == 'Admin' %>
+<%= link_to 'New Blog', new_blog_path %>
+<% end %>
+</div>
+</div>
+<!--</div>-->

@@ -1,0 +1,29 @@
+<%= form_tag('/signup') do %>
+
+<% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<label for="user_login">Username</label><br/>
+<%= text_field "user", "login", :size => 20 %><br/>
+
+<label for="user_password">Password</label><br/>
+<%= password_field "user", "password", :size => 20 %><br/>
+
+<label for="user_password_confirmation">Password Confirmation</label><br/>
+<%= password_field "user", "password_confirmation", :size => 20 %><br/>
+
+<label for="user_email">Email</label><br/>
+<%= text_field "user", "email",  :size => 20 %><br/>
+
+<%= submit_tag "Signup" %>
+
+<% end %>

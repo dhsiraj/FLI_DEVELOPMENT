@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Blog:</b>
+  <%= @comment.blog.blog_title %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @comment.user.username %>
+</p>
+
+<p>
+  <b>Comment title:</b>
+  <%= @comment.comment_title %>
+</p>
+
+<p>
+  <b>Comment detail:</b>
+  <%= @comment.comment_detail %>
+</p>
+
+<p>
+  <b>Ip address:</b>
+  <%= @comment.ip_address %>
+</p>
+
+<p>
+  <b>Comment flag:</b>
+  <%= @comment.comment_flag %>
+</p>
+
+<% if getusertype == 'Admin' %>
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<% end %>
+<%= link_to 'Back', comments_path %>
