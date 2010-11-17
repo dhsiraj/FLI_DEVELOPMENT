@@ -3,8 +3,8 @@ class CreateBlogs < ActiveRecord::Migration
     create_table :blogs do |t|
       t.references :user
       t.string :blog_title
-      t.string :blog_desc
-      t.string :blog_detail
+      t.string :blog_desc, :limit => 200
+      t.string :blog_detail, :limit => 1500
       t.datetime :posted_on
       t.integer :blog_flag
 

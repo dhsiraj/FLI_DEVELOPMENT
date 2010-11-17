@@ -3,7 +3,7 @@ class CreateFeedbacks < ActiveRecord::Migration
     create_table :feedbacks do |t|
       t.references :user
       t.string :feedback_title
-      t.string :feedback_detail
+      t.string :feedback_detail,:limit => 500
       t.string :ip_address
 
       t.timestamps
