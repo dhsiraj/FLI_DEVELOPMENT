@@ -1,2 +1,4 @@
 <%= render 'form' %>
+<% if getusertype == 'Admin' %>
 <p class="end-story-links"><%= link_to 'Back', feedbacks_path %></p>
+<% end %>
