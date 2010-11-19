@@ -18,7 +18,7 @@
     <td><%= comment.blog.blog_title %></td>
     <td><%= comment.user.username %></td>
     <td><%= comment.comment_title %></td>
-    <td><%= comment.comment_detail %></td>
+    <td><%= h(comment.comment_detail).gsub(/\n/, '<br/>') %></td>
     <td><%= comment.ip_address %></td>
     <td><%= comment.comment_flag %></td>
     <td><%= link_to 'Show', comment %></td>

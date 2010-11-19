@@ -2,7 +2,7 @@
 <div class="content-right">
 <h3 class="dateline"><%=h @blog.user.username %></h3>
 <h2><%=h @blog.blog_title %></h2>
-<p class="intro"><%=h @blog.blog_detail %>
+<p class="intro"><%=h(@blog.blog_detail).gsub(/\n/, '<br/>') %>
 </p>
 <% if getusertype == 'Admin' %>
 <p class="end-story-links"><%= link_to 'Edit', edit_blog_path(@blog) %> |

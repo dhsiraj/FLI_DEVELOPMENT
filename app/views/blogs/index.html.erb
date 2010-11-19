@@ -4,7 +4,7 @@
 	
 	<h2><%=h blog.blog_title %></h2>
   <h3 class="dateline"><%=h blog.user.username %> on &nbsp;&nbsp;<%=blog.posted_on%></h3>
-   <p class="intro"><%=h blog.blog_desc %></p>
+   <p class="intro"><%=h(blog.blog_desc).gsub(/\n/, '<br/>') %></p>
    <p class="end-story-links"><%= link_to 'Show', blog %>
    <% if getusertype == 'Admin' %>
 	| <%= link_to 'Edit', edit_blog_path(blog) %> |

@@ -17,7 +17,7 @@
 
 <p>
   <b>Comment detail:</b>
-  <%= @comment.comment_detail %>
+  <%= h(@comment.comment_detail).gsub(/\n/, '<br/>') %>
 </p>
 
 <p>

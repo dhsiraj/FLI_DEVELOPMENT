@@ -4,7 +4,7 @@
 	
 	<h2><%=h feedback.feedback_title %></h2>
   <h3 class="dateline"><%=h feedback.user.username %> on &nbsp;&nbsp;<%=feedback.created_at%>&nbsp;&nbsp; From IP &nbsp;&nbsp;<%=h feedback.ip_address %> </h3>
-   <p class="intro"><%=h feedback.feedback_detail %></p>
+   <p class="intro"><%=h(feedback.feedback_detail).gsub(/\n/, '<br/>') %></p>
    <p class="end-story-links"><%= link_to 'Show', feedback %>
    <% if getusertype == 'Admin' %>
    | <%= link_to 'Edit', edit_feedback_path(feedback) %> |

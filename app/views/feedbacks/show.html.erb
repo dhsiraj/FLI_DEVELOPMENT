@@ -12,7 +12,7 @@
 
 <p>
   <b>Feedback detail:</b>
-  <%= @feedback.feedback_detail %>
+  <%= h(@feedback.feedback_detail).gsub(/\n/, '<br/>') %>
 </p>
 
 <p>
