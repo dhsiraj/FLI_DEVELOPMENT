@@ -1,6 +1,10 @@
 <ul id="footer-nav">
     <li><a href="">Home</a></li>
+    <% if getusertype == 'Admin' %>
     <li><a href="/feedbacks">Feedback</a></li>
+    <% else %>
+    <li><a href="/feedbacks/new">Feedback</a></li>
+    <% end %>
     <li><a href="">Desclaimer</a></li>
     <li><a href="">Site Map</a></li>
     <li><a href="">Links</a></li>
