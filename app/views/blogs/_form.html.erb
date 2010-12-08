@@ -14,8 +14,7 @@
 <legend>New post</legend>
 <ol>
  <li>
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+    <%= f.hidden_field :user_id, :value => session[:user].id %>
 </li>
 <li>
     <%= f.label :blog_title %>
