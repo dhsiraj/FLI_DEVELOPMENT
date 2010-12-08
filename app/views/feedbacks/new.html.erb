@@ -1,4 +1,9 @@
+<% if getusertype != "" %>
 <%= render 'form' %>
-<% if getusertype == 'Admin' %>
+<% else %>
+<h3> <a href="javascript:void(0)" id="opener-login-commentlink">Login</a> to post feedback </h3>
+<% end %>
+<% if getusertype == "Admin" %>
 <p class="end-story-links"><%= link_to 'Back', feedbacks_path %></p>
 <% end %>
+

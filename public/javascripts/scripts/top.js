@@ -102,6 +102,10 @@ $('#opener-login')
 					$('#dialog-login').dialog('open');
 				}*/
 			});
+$('#opener-login-commentlink')			
+			.click(function() {
+				$('#dialog-login').dialog('open');
+			});
 
 $('#opener-prg_comment_login')			
 			.click(function() {
