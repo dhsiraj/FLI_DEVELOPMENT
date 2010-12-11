@@ -1,0 +1,12 @@
+<div id="content-inner">
+<div class="content-right">
+<h3 class="dateline"><%=h @todo.todo_date %>&nbsp;&nbsp;Type :<%=@todo.todo_type%>&nbsp;&nbsp; Priority: <%=@todo.priority%></h3>
+<h2><%=h @todo.title %></h2>
+<p class="intro"><%=h(@todo.desc).gsub(/\n/, '<br/>') %>
+</p>
+<% if getusertype == 'Admin' %>
+<p class="end-story-links"><%= link_to 'Edit', edit_todo_path(@todo) %> |
+<%= link_to 'Back', todos_path %></p>
+<% end %>
+</div>
+</div>

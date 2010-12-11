@@ -1,0 +1,39 @@
+<%= form_for(@top_link) do |f| %>
+  <% if @top_link.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@top_link.errors.count, "error") %> prohibited this top_link from being saved:</h2>
+
+      <ul>
+      <% @top_link.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    <li>
+  <% end %>
+<fieldset>
+<legend>New Link</legend>
+<ol>
+  <li>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  <li>
+  <li>
+    <%= f.label :link_url %>
+    <%= f.text_field :link_url %>
+  <li>
+  <li>
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+  <li>
+  <li>
+    <%= f.label :flag %>
+    <%= f.text_field :flag %>
+  <li>
+  <li>
+    <fieldset>
+    <%= f.submit %>
+  </fieldset>
+</li>
+</ol>
+</fieldset>
+<% end %>

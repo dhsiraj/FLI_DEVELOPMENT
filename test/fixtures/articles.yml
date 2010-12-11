@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  art_title: MyString
+  art_type: MyString
+  art_source: MyString
+  art_desc: MyText
+  art_link: MyString
+  art_flag: 1
+  art_date: 2010-12-10 23:13:50
+  user_id: MyString
+
+two:
+  art_title: MyString
+  art_type: MyString
+  art_source: MyString
+  art_desc: MyText
+  art_link: MyString
+  art_flag: 1
+  art_date: 2010-12-10 23:13:50
+  user_id: MyString

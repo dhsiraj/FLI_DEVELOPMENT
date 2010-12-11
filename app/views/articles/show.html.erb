@@ -1,0 +1,22 @@
+<div id="content-inner">
+<div class="content-right">
+<h3 class="dateline"><%=h @article.user.username %>&nbsp;&nbsp;<%=@article.art_date%></h3>
+<h2><%=h @article.art_title %></h2>
+<p class="intro"><%=h(@article.art_desc).gsub(/\n/, '<br/>') %>
+</p>
+<p>Source: <%= @article.art_source %></p>
+<p>Link: <%= @article.art_link %></p>
+<% if getusertype == 'Admin' %>
+<p class="end-story-links"><%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %></p>
+<% end %>
+<h2>Comments</h2> 
+<% @article.comment.each do |com|
+#if (c.user) %> 
+<p>  <b>Commenter:</b>  <%=h com.user.username %> 
+<br><b>Title:</b><%=h com.comment_title %>
+  <br><b>Comment:</b>  <%=h com.comment_detail %>  </p> 
+<% #end
+end %>
+</div>
+</div>

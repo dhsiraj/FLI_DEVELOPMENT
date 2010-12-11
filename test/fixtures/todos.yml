@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  todo_type: MyString
+  priority: MyString
+  desc: MyString
+  status: MyString
+  flag: 
+  todo_date: 2010-12-10 22:15:05
+
+two:
+  title: MyString
+  todo_type: MyString
+  priority: MyString
+  desc: MyString
+  status: MyString
+  flag: 
+  todo_date: 2010-12-10 22:15:05

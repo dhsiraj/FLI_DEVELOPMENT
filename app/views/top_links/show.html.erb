@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @top_link.title %>
+</p>
+
+<p>
+  <b>Link url:</b>
+  <%= @top_link.link_url %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @top_link.category %>
+</p>
+
+<p>
+  <b>Flag:</b>
+  <%= @top_link.flag %>
+</p>
+
+
+<%= link_to 'Edit', edit_top_link_path(@top_link) %> |
+<%= link_to 'Back', top_links_path %>

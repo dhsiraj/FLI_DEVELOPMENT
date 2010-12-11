@@ -1,0 +1,21 @@
+<div id="content-inner">
+<div class="content-right">
+<% @top_links.each do |top_link| %>
+	
+	<h2><%=h top_link.title %></h2>
+  <h3 class="dateline"><%=h top_link.category %></h3>
+   <p class="intro"><a href="<%=top_link.link_url %>" target="_new"><%=h top_link.link_url %></a></p>
+   
+   <p class="end-story-links"><%= link_to 'Show', top_link %>
+   <% if getusertype == 'Admin' %>
+	| <%= link_to 'Edit', edit_top_link_path(top_link) %> |
+   <%= link_to 'Destroy', top_link, :confirm => 'Are you sure?', :method => :delete %></p>
+   <% end %>
+<% end %>
+<br />
+ <% if getusertype == 'Admin' %>
+<%= link_to 'New Link', new_top_link_path %>
+<% end %>
+</div>
+</div>
+

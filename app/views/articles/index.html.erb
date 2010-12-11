@@ -1,0 +1,19 @@
+<div id="content-inner">
+<div class="content-right">
+<% @articles.each do |article| %>
+	
+	<h2><%=h article.art_title %></h2>
+  <h3 class="dateline"><%=h article.user.username %> on &nbsp;&nbsp;<%=article.art_date%></h3>
+   <p class="intro"><%=h(article.art_desc).gsub(/\n/, '<br/>') %></p>
+   <p class="end-story-links"><%= link_to 'Show',article %>
+   <% if getusertype == 'Admin' %>
+	| <%= link_to 'Edit', edit_article_path(article) %> |
+   <%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></p>
+   <% end %>
+<% end %>
+<br />
+ <% if getusertype == 'Admin' %>
+<%= link_to 'New Blog', new_article_path %>
+<% end %>
+</div>
+</div>
