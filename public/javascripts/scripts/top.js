@@ -192,7 +192,8 @@ function validateLogin(){
 	var token = document.getElementsByName("authenticity_token")[0].value;
 	if(username != null && username != "" && password != null && password !=""){
 		var dataString = "action=login&user_name="+username+"&authenticity_token="+token+"&password="+password;
-		$.ajax({type: "GET", url: "login", data: dataString, contentType: "text/html", charset: "UTF-8",
+		//alert(dataString);
+		$.ajax({type: "GET", url: "/login", data: dataString, contentType: "text/html", charset: "UTF-8",
 			success: function(data) {
 				//alert(data);
 				if(data){
@@ -338,10 +339,10 @@ function forgotPassword(val){
 function register(param){
 	processingWait('#register_message');
 	var dataString = param;
-	alert(param)
+	//alert(param)
 	$.ajax({type: "GET", url: "register", data: dataString, contentType: "text/html", charset: "UTF-8",
 		success: function(data) {
-			alert(data);
+			//alert(data);
 			if(data){
 				if(data == "error"){
 					showMsgDiv('#register_message',successMsgClass,alertMsgClass, alertIconClass+'User name already exists, Please enter a different one');
