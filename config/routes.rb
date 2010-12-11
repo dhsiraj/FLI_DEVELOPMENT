@@ -1,4 +1,10 @@
 FLI::Application.routes.draw do
+  resources :articles
+
+  resources :top_links
+
+  resources :todos
+
   resources :feedbacks
 
   resources :comments
@@ -66,6 +72,7 @@ FLI::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  match  "contact",  :controller => "home", :action => "contact"
   match  "signin",  :controller => "users", :action => "signin"
   match  "register",  :controller => "users", :action => "register"
   match  "signup",  :controller => "users", :action => "signup"

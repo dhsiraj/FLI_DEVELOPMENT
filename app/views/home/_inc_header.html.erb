@@ -1,6 +1,6 @@
 <div id="sign_in">
     <ul>
-	<li><a href="javascript:void(0);" id="dialog_link" >test</a></li>
+	<!--<li><a href="javascript:void(0);" id="dialog_link" >test</a></li>-->
 	<li><a href="/home">Home</a></li>
 	<% if session[:user] != "" &&  session[:user] != nil  %>
         <li><a href="javascript:void()" onClick="return logOut();">Logout</a></li>
@@ -10,7 +10,7 @@
 	<li><a id="opener-register" href="javascript:void(0);">Register</a></li>
 	<!--<li><a href="/users/new">Register</a></li>-->
 	<% end %>
-        <li><input type="text" class="txt" value="Search" /></li>
+        <!--<li><input type="text" class="txt" value="Search" /></li>-->
     </ul>
 </div>
 <div class="complogo">
@@ -21,17 +21,19 @@
     <ul id="nav">
         <li><a href="/home">Home</a></li>
         <li><a href="/blogs">Blogs</a></li>
-        <li><a href="/blogs?type=article">Articles</a></li>
-        <li><a href="/home/services">Services</a>
-	 <li><a href="/home/article">Services</a>
+        <li><a href="/articles">Articles</a></li>
+	<li><a href="/todos">To-Do</a></li>
+	<li><a href="/top_links">Top Links</a></li>
+        <!--<li><a href="/home/services">Services</a>
+	<li><a href="/home/article">Services</a>-->
 		<!--<ul>
 		<li>Patient Portal</li>
 		<li>Immunization Reminder</li>
 		<li>Agriculture</li>
 		</ul>-->
-	</li>
-	<li><a href="/home/about">About Us</a></li>
-        <li><a href="/home/contact">Contact</a></li>
-	<li><a href="/login/ftp">FTP</a></li>
+	<!--</li>-->
+	<li><a href="/home">About Us</a></li>
+        <li><a href="contact">Contact</a></li>
+	<!--<li><a href="/login/ftp">FTP</a></li>-->
     </ul>
 </div>	

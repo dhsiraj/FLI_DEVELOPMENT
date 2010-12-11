@@ -54,6 +54,7 @@ def login
       if @user
           format.js   { render :text => "error" }  
       else
+        #render :text => "success"
         format.js   { render :text => "success" }  
       end
     end
@@ -135,10 +136,12 @@ def login
         session[:user] = @user
         format.js   { render :text => "Registration complete." }  
       else
-       if @user.errors.any? 
+       if @user.errors.any?  
            @user.errors.full_messages.each do |msg|
-              puts msg 
-            end 
+              puts msg
+              
+           end
+           puts "INSIDE ERRORS"
        end 
        format.js   { render :text => "Registration incomplete, please try again." }  
       end

@@ -3,6 +3,7 @@ class CreateComments < ActiveRecord::Migration
     create_table :comments do |t|
       t.references :blog
       t.references :user
+      t.references :article
       t.string :comment_title
       t.string :comment_detail
       t.string :ip_address

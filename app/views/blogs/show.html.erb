@@ -1,6 +1,6 @@
 <div id="content-inner">
 <div class="content-right">
-<h3 class="dateline"><%=h @blog.user.username %></h3>
+<h3 class="dateline"><%=h @blog.user.username %>&nbsp;&nbsp;<%=@blog.posted_on%></h3>
 <h2><%=h @blog.blog_title %></h2>
 <p class="intro"><%=h(@blog.blog_detail).gsub(/\n/, '<br/>') %>
 </p>

@@ -286,6 +286,7 @@ function forgotPassword(val){
  
  function checkAvailability(){
 	user = $("#register_name").val();
+	alert(user);
 	if(user == ""){
 		showMsgDiv('#register_message',successMsgClass,alertMsgClass, alertIconClass+'Please enter your user name');
 		return false;
@@ -340,7 +341,7 @@ function register(param){
 	alert(param)
 	$.ajax({type: "GET", url: "register", data: dataString, contentType: "text/html", charset: "UTF-8",
 		success: function(data) {
-			//alert(data);
+			alert(data);
 			if(data){
 				if(data == "error"){
 					showMsgDiv('#register_message',successMsgClass,alertMsgClass, alertIconClass+'User name already exists, Please enter a different one');
@@ -384,7 +385,7 @@ function ValidateEmail(vEmail) {
 
  function processingWait(divobj){
 	//$(divobj).removeClass(rmclass);
-	$(divobj).html("<img src='images/processwaitbig.gif'/>");
+	$(divobj).html("<img src='/images/processwaitbig.gif'/>");
 	$(divobj).slideDown('slow');
  }
 
