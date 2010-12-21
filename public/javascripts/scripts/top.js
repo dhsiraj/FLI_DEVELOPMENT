@@ -186,6 +186,7 @@ $(function() {
 
 
 function validateLogin(){
+	
 	processingWait('#login_message');
 	var username = $("#user_name").val();
 	var password = $("#login_password").val();
