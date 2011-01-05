@@ -8,27 +8,30 @@
 <p class="end-story-links"><%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %></p>
 <% end %>
-<h2>Comments</h2> 
+<br><br>
+<h2>Comments...</h2> <br>
 <% @blog.comment.each do |com|
 #if (c.user) %> 
-<p>  <b>Commenter:</b>  <%=h com.user.username %> 
-<br><b>Title:</b><%=h com.comment_title %>
-  <br><b>Comment:</b>  <%=h com.comment_detail %>  </p> 
+<p>  <b>Commenter: </b>  <%=h com.user.username %> 
+<br><b>Title:&nbsp;&nbsp;</b><%=h com.comment_title %>
+  <br><b>Comment:&nbsp; &nbsp;</b>  <%=h com.comment_detail %>  </p> <br>
 <% #end
 end %> 
-
+<br><br>
 <h1>New comment</h1> 
 <%form_for :comment, :url => {:controller=>:comments, :action => :create } do |f| %> 
 <div id="comment_message"></div>
 <fieldset><ol>
-<%= f.hidden_field :user_id, :value => @blog.user.id %>
+<%= f.hidden_field :user_id, :value => session[:user].id %>
 <%= f.hidden_field :blog_id, :value => @blog.id %>
-<li>  <%= f.label :commenter,nil, :class=>"customLoginlabel"%> <%=@blog.user.username%>  </li>  
+<li>  <%= f.label :commenter,nil, :class=>"customLoginlabel"%> <%=session[:user].username%>  </li>  
 <li>  <%= f.label :Title,nil, :class=>"customLoginlabel" %>  <%= f.text_field :comment_title %>  </li> 
 <li>  <%= f.label :Comment,nil, :class=>"customLoginlabel" %>  <%= f.text_area :comment_detail,:size=>"50x3" %>  </li> 
 <li><fieldset>  <%= f.submit "Create" %> </fieldset> </li>
+
 <% end %> 
 </ol></fieldset>
+<br><br>
 </div>
 </div>
 
