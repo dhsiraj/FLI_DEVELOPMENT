@@ -1,19 +1,21 @@
-<div id="content-inner">
-<div class="content-right">
 <% @feedbacks.each do |feedback| %>
+<div class="post">
+	<ul class="content_title"><%=h feedback.feedback_title %></ul>
+	<ul class="content_subtitle">Posted by <%=h feedback.user.username %> on &nbsp;&nbsp;<%=feedback.created_at%></ul>
+	<div style="clear: both;">&nbsp;</div>
+	<div class="entry">
+	<p><%=h(feedback.feedback_detail).gsub(/\n/, '<br/>') %></p>
+	<p class="links">
+		<%= link_to 'Read More',feedback %>&nbsp;&nbsp;&nbsp;&nbsp;
+	<% if getusertype == 'Admin' %>
+	|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'New Feedback', new_feedback_path %>&nbsp;&nbsp;&nbsp;&nbsp;
+	|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Edit', edit_feedback_path(feedback) %>&nbsp;&nbsp;&nbsp;&nbsp;
+	|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Destroy', feedback, :confirm => 'Are you sure?', :method => :delete %>
+	<% end %>
+	</p>
 	
-	<h2><%=h feedback.feedback_title %></h2>
-  <h3 class="dateline"><%=h feedback.user.username %> on &nbsp;&nbsp;<%=feedback.created_at%>&nbsp;&nbsp; From IP &nbsp;&nbsp;<%=h feedback.ip_address %> </h3>
-   <p class="intro"><%=h(feedback.feedback_detail).gsub(/\n/, '<br/>') %></p>
-   <p class="end-story-links"><%= link_to 'Show', feedback %>
-   <% if getusertype == 'Admin' %>
-   | <%= link_to 'Edit', edit_feedback_path(feedback) %> |
-   <%= link_to 'Destroy', feedback, :confirm => 'Are you sure?', :method => :delete %>
-   <% end %>   
-   </p>
+	</div>
+</div>
+<div style="clear: both;padding-bottom:5px;">&nbsp;</div>
 <% end %>
-<br />
-<%= link_to 'New Feedback', new_feedback_path %>
-</div>
-</div>
 

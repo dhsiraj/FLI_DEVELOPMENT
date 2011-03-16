@@ -1,29 +1,30 @@
-<div id="sign_in">
+<div id="header_signin">
     <ul>
-	<!--<li><a href="javascript:void(0);" id="dialog_link" >test</a></li>-->
-	<li><a href="/home">Home</a></li>
+	<li><a href="/home">Home</a>|</li>
 	<% if session[:user] != "" &&  session[:user] != nil  %>
-        <li><a href="javascript:void()" onClick="return logOut();">Logout</a></li>
+        <li><a href="javascript:void()" onClick="return logOut();">Logout</a>|</li>
 	<% else %>
-	<!--<li><a id="opener-login" href="/login/login">Login</a></li>-->
-	<li><a id="opener-login" href="javascript:void(0);">Login</a></li>
-	<li><a id="opener-register" href="javascript:void(0);">Register</a></li>
-	<!--<li><a href="/users/new">Register</a></li>-->
+	<li><a id="opener-login" href="javascript:void(0);">Login</a>|</li>
+	<li><a id="opener-register" href="javascript:void(0);">Register</a>|</li>
 	<% end %>
-        <!--<li><input type="text" class="txt" value="Search" /></li>-->
+        <li><input type="text" id="search" /></li>
     </ul>
 </div>
-<div class="complogo">
-	<p><span class="fli_bold">FAST LINE INFO<br /></span><span class="fli_small">Information Management System</span></p>
+<div id="header_body"><span class="logo_name"><img src="/images/logo_fastline.png" border="0" width="280"></span><img src="/images/top.jpg" width="700" height="80"/>
 </div>
-<div id="main_nav">
+<!--<div class="complogo">
+	<p><span class="fli_bold">FAST LINE INFO<br /></span><span class="fli_small">Information Management System</span></p>
+</div>-->
+
+<div id="header_menu">
     <!-- Main Navigation -->
-    <ul id="nav">
-        <li><a href="/home">Home</a></li>
-        <li><a href="/blogs">Blogs</a></li>
-        <li><a href="/articles">Articles</a></li>
-	<li><a href="/todos">To-Do</a></li>
-	<li><a href="/top_links">Top Links</a></li>
+    <ul>
+        <li><a href="/home"><span>Home</span></a></li>
+        <li><a href="/blogs"><span>Blogs</span></a></li>
+        <li><a href="/articles"><span>Articles</span></a></li>
+	<li><a href="#"><span>Tech demos</span></a></li>
+	<li><a href="/todos"><span>Todos</span></a></li>
+	<li><a href="/top_links"><span>Links</span></a></li>
         <!--<li><a href="/home/services">Services</a>
 	<li><a href="/home/article">Services</a>-->
 		<!--<ul>
@@ -32,8 +33,9 @@
 		<li>Agriculture</li>
 		</ul>-->
 	<!--</li>-->
-	<li><a href="/home">About Us</a></li>
-        <li><a href="/contact">Contact</a></li>
+	<li><a href="#"><span>Site map</span></a></li>
+	<li><a href="/home"><span>About us</span></a></li>
+        <li><a href="/contact"><span>Contact us</span></a></li>
 	<!--<li><a href="/login/ftp">FTP</a></li>-->
     </ul>
 </div>	

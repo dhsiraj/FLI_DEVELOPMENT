@@ -7,36 +7,38 @@
 	<meta http-equiv="Pragma" content="no-cache" />
 	<meta name="Description" content="description" />
 	<meta name="Keywords" content="keywords" />
-	<%= stylesheet_link_tag 'jq/jquery-ui-1-8-2-custom','jq/uniform-default','fastline','form' %>
+	<%= stylesheet_link_tag 'jq/jquery-ui-1-8-2-custom','jq/uniform-default','fli','form' %>
 	<%= javascript_include_tag 'jq/jquery-1-4-2-min','jq/jquery-ui-1-8-2-custom-min','jq/jquery-uniform-min','scripts/top'%>
 	<%= csrf_meta_tag %>
 </head>
 <body>
-	<div id="outer-wrapper">
-		<div id="inner-wrapper">
-			<div id="content-wrapper">
-		    	<div id="header">
-		        	<%= render :partial => "home/inc_header" %>
-		    	</div><!-- end header -->
-				
-				<!-- Begin Content -->
-				<div id="content">
-		           			<!-- Body Content -->
-				<p style="color: green"><%= flash[:notice] %></p>
-				<%= yield %>	
-				</div>
+  <div id="wrapper">
+    <div id="header">
+	    <%= render :partial => "home/inc_header" %>
+    </div><!-- end header -->
+    <div id="bread_crumb">
+      <span><a href="/home">Home</a> > <a href=""> Articles </a></span>
+    </div>
+    <div id="content_body">
+	<div id="sidebar">
+		<%= render :partial => "home/inc_sidebar" %>
+	</div><!-- sidebar ends here -->
+	   
+	<div id="content">
+	  <p style="color: green"><%= flash[:notice] %></p>
+	  <%= yield %>	
+	</div><!-- content ends here -->
 	
-				<!-- Begin Left Column -->
-				<div id="sidebar">
-					<%= render :partial => "home/inc_sidebar" %>
-				</div>
-				
-				<!-- Begin Footer -->
-		        <div id="footer">
-		            <%= render :partial => "home/inc_footer" %>
-		        </div>
-			</div><!-- End Content-Wrapper -->
-		</div>
-	</div>
+	<div id="rightbar">&nbsp;
+        </div><!-- rightbar ends here -->
+	   
+    </div> <!-- content_body ends here -->	    
+	    
+    <div id="footer">
+	<%= render :partial => "home/inc_footer" %>
+    </div> <!-- footer ends here -->
+		 
+	 
+  </div><!-- wrapper ends here -->
 </body>
 </html>

@@ -1,26 +1,15 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>User:</b>
-  <%= @feedback.user_id %>
-</p>
-
-<p>
-  <b>Feedback title:</b>
-  <%= @feedback.feedback_title %>
-</p>
-
-<p>
-  <b>Feedback detail:</b>
-  <%= h(@feedback.feedback_detail).gsub(/\n/, '<br/>') %>
-</p>
-
-<p>
-  <b>Ip address:</b>
-  <%= @feedback.ip_address %>
-</p>
-
-<% if getusertype == 'Admin' %>
-<%= link_to 'Edit', edit_feedback_path(@feedback) %> |
-<% end %>
-<%= link_to 'Back', feedbacks_path %>
+<div class="post">
+    <ul class="content_title"><%=h  @feedback.feedback_title %></ul>
+    <ul class="content_subtitle">Posted by <%=h  @feedback.user.username %> on &nbsp;&nbsp;<%= @feedback.created_at%></ul>
+    <div style="clear: both;">&nbsp;</div>
+    <div class="entry">
+    <p><%=h( @feedback.feedback_detail).gsub(/\n/, '<br/>') %></p>
+    <p class="links">
+    <% if getusertype == 'Admin' %>
+    <%= link_to 'Back', feedbacks_path %>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Edit', edit_feedback_path(@feedback) %>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Destroy', @feedback, :confirm => 'Are you sure?', :method => :delete %>
+    <% end %>
+    </p>
+    
+    </div>
+</div>
+<div style="clear: both;">&nbsp;</div>

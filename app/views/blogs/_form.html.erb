@@ -11,21 +11,27 @@
     </div>
   <% end %>
 <fieldset>
-<legend>New post</legend>
+<legend><%=@formTitle%></legend>
 <ol>
  <li>
     <%= f.hidden_field :user_id, :value => session[:user].id %>
 </li>
 <li>
     <%= f.label :blog_title %>
+</li>
+  <li>
     <%= f.text_field :blog_title, :size => 70 %>
 </li>
 <li>
     <%= f.label :blog_desc %>
+</li>
+  <li>
     <%= f.text_area :blog_desc, :size => "70x3"  %>
 </li>
 <li>
     <%= f.label :blog_detail %>
+</li>
+  <li>
     <%= f.text_area:blog_detail, :size => "70x20" %>
  </li>
  <!--<li>

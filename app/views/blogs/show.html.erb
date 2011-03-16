@@ -1,37 +1,44 @@
-<div id="content-inner">
-<div class="content-right">
-<h3 class="dateline"><%=h @blog.user.username %>&nbsp;&nbsp;<%=@blog.posted_on%></h3>
-<h2><%=h @blog.blog_title %></h2>
-<p class="intro"><%=h(@blog.blog_detail).gsub(/\n/, '<br/>') %>
-</p>
-<% if getusertype == 'Admin' %>
-<p class="end-story-links"><%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %></p>
-<% end %>
-<br><br>
-<h2>Comments...</h2> <br>
+<div class="post">
+    <ul class="content_title"><%=h  @blog.blog_title %></ul>
+    <ul class="content_subtitle">Posted by <%=h  @blog.user.username %> on &nbsp;&nbsp;<%= @blog.posted_on%></ul>
+    <div style="clear: both;">&nbsp;</div>
+    <div class="entry">
+    <p><%=h( @blog.blog_detail).gsub(/\n/, '<br/>') %></p>
+    <p class="links">
+    <% if getusertype == 'Admin' %>
+    <%= link_to 'Back', blogs_path %>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Edit', edit_blog_path(@blog) %>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Destroy', @blog, :confirm => 'Are you sure?', :method => :delete %>
+    <% else %>
+      <%= link_to 'Back', blogs_path %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <% end %>
+    </p>
+    
+    </div>
+</div>
+<div style="clear: both;">&nbsp;</div>
+
+<div id="all_comments">
+<p class="comment_title">Comments:</p> 
 <% @blog.comment.each do |com|
 #if (c.user) %> 
-<p>  <b>Commenter: </b>  <%=h com.user.username %> 
-<br><b>Title:&nbsp;&nbsp;</b><%=h com.comment_title %>
-  <br><b>Comment:&nbsp; &nbsp;</b>  <%=h com.comment_detail %>  </p> <br>
+<ul class="comment_subtitle">  <b>  <%=h com.user.username %> </b> on </ul>
+<!--<br><b>Title:</b><%=h com.comment_title %>-->
+  <ul><%=h com.comment_detail %>  </ul>
+  <div style="clear: both;">&nbsp;</div>
 <% #end
-end %> 
-<br><br>
-<h1>New comment</h1> 
+end %>
+</div>
+
+
+<p class="comment_title">Comment here:</p>
+<div id="new_comment">
+  <div id="comment_message"></div>
 <%form_for :comment, :url => {:controller=>:comments, :action => :create } do |f| %> 
-<div id="comment_message"></div>
-<fieldset><ol>
+<ol>
 <%= f.hidden_field :user_id, :value => session[:user].id %>
 <%= f.hidden_field :blog_id, :value => @blog.id %>
-<li>  <%= f.label :commenter,nil, :class=>"customLoginlabel"%> <%=session[:user].username%>  </li>  
-<li>  <%= f.label :Title,nil, :class=>"customLoginlabel" %>  <%= f.text_field :comment_title %>  </li> 
-<li>  <%= f.label :Comment,nil, :class=>"customLoginlabel" %>  <%= f.text_area :comment_detail,:size=>"50x3" %>  </li> 
-<li><fieldset>  <%= f.submit "Create" %> </fieldset> </li>
-
+<li>  <%= f.text_area :comment_detail,:size=>"70x3" %>  </li> 
+<li><fieldset>  <%= f.submit "Post" %> </fieldset> </li>
+</ol>
 <% end %> 
-</ol></fieldset>
-<br><br>
 </div>
-</div>
-
+<div style="clear: both;">&nbsp;</div>

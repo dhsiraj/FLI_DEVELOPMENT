@@ -1,19 +1,20 @@
-<div id="content-inner">
-<div class="content-right">
 <% @articles.each do |article| %>
+<div class="post">
+	<ul class="content_title"><%=h article.art_title %></ul>
+	<ul class="content_subtitle">Posted by <%=h article.user.username %> on &nbsp;&nbsp;<%=article.art_date%></ul>
+	<div style="clear: both;">&nbsp;</div>
+	<div class="entry">
+	<p><%=h(article.art_desc).gsub(/\n/, '<br/>') %></p>
+	<p class="links">
+		<%= link_to 'Read More',article %>&nbsp;&nbsp;&nbsp;&nbsp;
+	<% if getusertype == 'Admin' %>
+	|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'New Blog', new_article_path %>&nbsp;&nbsp;&nbsp;&nbsp;
+	|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Edit', edit_article_path(article) %>&nbsp;&nbsp;&nbsp;&nbsp;
+	|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %>
+	<% end %>
+	</p>
 	
-	<h2><%=h article.art_title %></h2>
-  <h3 class="dateline"><%=h article.user.username %> on &nbsp;&nbsp;<%=article.art_date%></h3>
-   <p class="intro"><%=h(article.art_desc).gsub(/\n/, '<br/>') %></p>
-   <p class="end-story-links"><%= link_to 'Show',article %>
-   <% if getusertype == 'Admin' %>
-	| <%= link_to 'Edit', edit_article_path(article) %> |
-   <%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></p>
-   <% end %>
-<% end %>
-<br />
- <% if getusertype == 'Admin' %>
-<%= link_to 'New Blog', new_article_path %>
-<% end %>
+	</div>
 </div>
-</div>
+<div style="clear: both;padding-bottom:5px;">&nbsp;</div>
+<% end %>

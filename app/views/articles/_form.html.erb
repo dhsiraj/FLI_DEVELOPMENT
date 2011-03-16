@@ -11,32 +11,45 @@
     </div>
   <% end %>
 <fieldset>
-<legend>New Article</legend>
+<legend><%=@formTitle%></legend>
 <ol>
   <li>
     <%= f.label "Title" %>
-    <%= f.text_field :art_title %>
+  </li>
+  <li>
+    <%= f.text_field :art_title, :size => 50 %>
   </li>
   <li>
     <%= f.label "Article Type" %>
-    <%= f.text_field :art_type %>
+  </li>
+  <li>
+    <%= f.text_field :art_type, :size => 50 %>
   </li>
   <li>
     <%= f.label "Article Source" %>
-    <%= f.text_field :art_source %>
   </li>
   <li>
-    <%= f.label "Detail" %>
-    <%= f.text_area :art_desc %>
+    <%= f.text_field :art_source, :size => 50 %>
   </li>
-  <li>
+   <li>
     <%= f.label "Article Link" %>
-    <%= f.text_field :art_link %>
+  </li>
+  <li>
+    <%= f.text_field :art_link, :size => 50 %>
   </li>
   <li>
     <%= f.label :art_flag %>
-    <%= f.text_field :art_flag %>
   </li>
+  <li>
+    <%= f.text_field :art_flag, :size => 50 %>
+  </li>
+  <li>
+    <%= f.label "Detail" %>
+  </li>
+  <li>
+    <%= f.text_area :art_desc, :size => "90x25" %>
+  </li>
+ 
   <!--<li>
     <%= f.label :art_date %>
     <%= f.datetime_select :art_date %>
@@ -45,7 +58,7 @@
     <%= f.hidden_field :user_id, :value => session[:user].id %>
   </li>
   <li>
-	<fieldset>
+      <fieldset>
     <%= f.submit %>
     </fieldset>
   </li>

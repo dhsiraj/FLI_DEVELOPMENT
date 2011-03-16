@@ -1,19 +1,20 @@
-<div id="content-inner">
-<div class="content-right">
 <% @todos.each do |todo| %>
+<div class="post">
+	<ul class="content_title"><%=h todo.title %></ul>
+	<ul class="content_subtitle">Priority <span style="font-weight:bold;color:#009909"><%=h todo.priority %></span> on &nbsp;&nbsp;<%=todo.todo_date%></ul>
+	<div style="clear: both;">&nbsp;</div>
+	<div class="entry">
+	<p><%=h(todo.desc).gsub(/\n/, '<br/>') %></p>
+	<p class="links">
+		<%= link_to 'Read More',todo %>&nbsp;&nbsp;&nbsp;&nbsp;
+	<% if getusertype == 'Admin' %>
+	|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'New Todo', new_todo_path %>&nbsp;&nbsp;&nbsp;&nbsp;
+	|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Edit', edit_todo_path(todo) %>&nbsp;&nbsp;&nbsp;&nbsp;
+	|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Destroy', todo, :confirm => 'Are you sure?', :method => :delete %>
+	<% end %>
+	</p>
 	
-	<h2><%=h todo.title %></h2>
-  <h3 class="dateline"><%=h todo.priority %> on &nbsp;&nbsp;<%=todo.todo_date%></h3>
-   <p class="intro"><%=h(todo.desc).gsub(/\n/, '<br/>') %></p>
-   <p class="end-story-links"><%= link_to 'Show', todo %>
-   <% if getusertype == 'Admin' %>
-	| <%= link_to 'Edit', edit_todo_path(todo) %> |
-   <%= link_to 'Destroy', todo, :confirm => 'Are you sure?', :method => :delete %></p>
-   <% end %>
-<% end %>
-<br />
- <% if getusertype == 'Admin' %>
-<%= link_to 'New Todo', new_todo_path %>
-<% end %>
+	</div>
 </div>
-</div>
+<div style="clear: both;padding-bottom:5px;">&nbsp;</div>
+<% end %>

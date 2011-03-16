@@ -1,12 +1,19 @@
-<div id="content-inner">
-<div class="content-right">
-<h3 class="dateline"><%=h @todo.todo_date %>&nbsp;&nbsp;Type :<%=@todo.todo_type%>&nbsp;&nbsp; Priority: <%=@todo.priority%></h3>
-<h2><%=h @todo.title %></h2>
-<p class="intro"><%=h(@todo.desc).gsub(/\n/, '<br/>') %>
-</p>
-<% if getusertype == 'Admin' %>
-<p class="end-story-links"><%= link_to 'Edit', edit_todo_path(@todo) %> |
-<%= link_to 'Back', todos_path %></p>
-<% end %>
+<div class="post">
+    <ul class="content_title"><%=h  @todo.title %></ul>
+    <ul class="content_subtitle">Priority <span style="font-weight:bold;color:#009909"><%=h @todo.priority %></span>&nbsp;&nbsp;Type :<%=@todo.todo_type%> on &nbsp;&nbsp;<%=@todo.todo_date%></ul>
+    <div style="clear: both;">&nbsp;</div>
+    <div class="entry">
+    <p><%=h( @todo.desc).gsub(/\n/, '<br/>') %></p>
+    <p class="links">
+    <% if getusertype == 'Admin' %>
+    <%= link_to 'Back', todos_path %>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Edit', edit_todo_path(@todo) %>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Destroy', @todo, :confirm => 'Are you sure?', :method => :delete %>
+    <% else %>
+      <%= link_to 'Back', todos_path %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <% end %>
+    </p>
+    
+    </div>
 </div>
-</div>
+<div style="clear: both;">&nbsp;</div>
+
+

@@ -1,183 +1,96 @@
-div.depot-form label
-{
-width: 8em;
-float: left;
-text-align: right;
-margin-right: 0.5em;
-font-size: .95em;
-font-family: "Times New Roman", serif;
-color: #797069;
-border:1px;
-display: block
-}
-
-div.depot-form input
-{
-color: #781351;
-/*background: #fee3ad;*/
-border: 1px solid #d1b9b3;
-}
-
-div.depot-form submit input
-{
-margin-left: 4.5em;
-}
-
-div.depot-form submit input
-{
-color: #000;
-/*background: #ffa20f;*/
-border: 2px outset #d1b9b3
-}
-
-div.depot-form fieldset
-{
-border: 1px solid #d1b9b3;
-width: 40em
-}
-
-div.depot-form legend
-{
-/*color: #fff;
-background: #ffa20c;*/
-font-size: 1.05em;
-font-family: "Times New Roman", serif;
-color: #797069;
-border: 1px solid #d1b9b3;
-padding: 2px 6px
-} 
-
-
 form fieldset {
   margin-bottom: 10px;
-  border: 1px solid #d1b9b3;
+  border: 1px solid #C0C0C0 ;
+  /*border-color:#C0C0C0;*/
+  border-radius: 25px;
   margin-right: auto;
   margin-left: auto;
- 
-  
+  /*border:none;*/
+     
 }
 form legend {
   padding: 0px 10px;
   font-weight: bold;
-  border: 1px solid #d1b9b3;
+ /* border: 1px solid #C0C0C0 ;*/
   font-size: 1.05em;
-  font-family: "Times New Roman", serif;
   color: #797069;
-  margin-left: 0.5em;
+  margin-left: 1.5em;
 
 }
-form label {
-  /*display: inline-block;
-  line-height: 1.5;
-  vertical-align: top;
-  width: 8em;
-  float: left;
-  text-align: right;
-  margin-left: 10.5em;
-  margin-right: 2.5em;
-  font-size: .95em;
-  font-family: "Times New Roman", serif;
-  color: #797069;
-  border:1px;*/
 
-	font-size: 10px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #666;
-	display: block;
-	margin-bottom: 3px;
-	clear: both;
-	margin-left: 10.5em;
-	margin-right: 2.5em;
-	float: left;
-	text-align: right;
-	font-weight: bold;
-	width: 95px; /* Width of labels */
-  
-}
-
-.customLoginlabel {
-  /*display: inline-block;
-  line-height: 1.5;
-  vertical-align: top;
-  width: 8em;
-  float: left;
-  text-align: right;
-  margin-left: 10.5em;
-  margin-right: 2.5em;
-  font-size: .95em;
-  font-family: "Times New Roman", serif;
-  color: #797069;
-  border:1px;*/
-
-	font-size: 10px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #666;
-	display: block;
-	margin-bottom: 3px;
-	clear: both;
-	margin-left: 2.5em;
-	margin-right: 2.5em;
-	float: left;
-	text-align: right;
-	font-weight: bold;
-	width: 95px; /* Width of labels */
-  
-}
-
-form input
-{
-color: #781351;
-/*background: #fee3ad;*/
-line-height: 1.5;
-border: 1px solid #d1b9b3;
-text-align: left;
-
-}
-form fieldset ol {
+form ol {
   margin-right: auto;
   margin-left: auto;
+  padding-top:30px;
   
 }
-form fieldset li {
-  list-style: none;
-  padding: 5px;
+form ol li {
+  padding: 10px;
   margin: 0;
+  padding-left:8.5em;
+  text-align: left;
+  list-style: none;
+  line-height:normal;
   
 }
-form fieldset fieldset {
-  border: none;
-  margin: 3px 0 0;
-  float: middle;
-  margin-left: 25.5em;
 
-}
-form fieldset fieldset legend {
-  padding: 0 0 5px;
-  font-weight: normal;
-}
-form fieldset fieldset label {
-  display: block;
-  width: auto;
-  margin-left: 123px; 
-}
-form em {
-  font-weight: bold;
-  font-style: normal;
-  color: #f00;
+form ol li fieldset{
+  text-align: center;
+  border:none;
+  
 }
 
-form fieldset fieldset input
-{
-color: #781351;
-float: middle;
-margin-left: 25.5em;
+
+form label {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 3px;
+  float: left;
+  text-align: left;
+    
 }
 
-form fieldset fieldset textarea 
-{
-color: #781351;
-float: middle;
-margin-left: 25.5em;
+#dialog-login form ol{
+  padding:5px;
+   
+}
+#dialog-login form label{
+  padding-top:2px;
+  
 }
 
+
+#dialog-login form ol li {
+  padding: 10px;
+  
+    
+}
+
+#dialog-register form ol{
+  padding:5px;
+   
+}
+#dialog-register form label{
+  padding-top:2px;
+  
+}
+
+
+#dialog-register form ol li {
+  padding: 10px;
+  
+    
+}
+
+#new_comment form ol {
+  padding:0px;
+  text-align:left;
+  float:left;
+}
+
+#new_comment form li {
+  text-align:left;
+  float:left;
+  padding-left:5px;
+}
 

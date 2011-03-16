@@ -1,25 +1,20 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @top_link.title %>
-</p>
-
-<p>
-  <b>Link url:</b>
-  <%= @top_link.link_url %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @top_link.category %>
-</p>
-
-<p>
-  <b>Flag:</b>
-  <%= @top_link.flag %>
-</p>
+<div class="post">
+    <ul class="content_title"><%=h @top_link.title %></ul>
+    <ul class="content_subtitle"><span style="font-weight:bold;color:#009909">Category : <%=h @top_link.title %></span></ul>
+    <ul class="content_subtitle"><a href="<%=@top_link.link_url %>" target="_new"><%=h @top_link.link_url %></a></ul>
+    <div style="clear: both;">&nbsp;</div>
+       
+    <div class="entry">
+    <p class="links">
+    <% if getusertype == 'Admin' %>
+    <%= link_to 'Back', top_links_path %>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Edit', edit_top_link_path(@top_link) %>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Destroy', @top_link, :confirm => 'Are you sure?', :method => :delete %>
+    <% else %>
+      <%= link_to 'Back', top_links_path %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <% end %>
+    </p>
+    
+    </div>
+</div>
+<div style="clear: both;">&nbsp;</div>
 
 
-<%= link_to 'Edit', edit_top_link_path(@top_link) %> |
-<%= link_to 'Back', top_links_path %>

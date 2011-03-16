@@ -1,20 +1,20 @@
-<div id="content-inner">
-<div class="content-right">
 <% @blogs.each do |blog| %>
+<div class="post">
+	<ul class="content_title"><%=h blog.blog_title %></ul>
+	<ul class="content_subtitle">Posted by <%=h blog.user.username %> on &nbsp;&nbsp;<%=blog.posted_on%></ul>
+	<div style="clear: both;">&nbsp;</div>
+	<div class="entry">
+	<p><%=h(blog.blog_desc).gsub(/\n/, '<br/>') %></p>
+	<p class="links">
+		<%= link_to 'Read More',blog %>&nbsp;&nbsp;&nbsp;&nbsp;
+	<% if getusertype == 'Admin' %>
+	|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'New Blog', new_blog_path %>&nbsp;&nbsp;&nbsp;&nbsp;
+	|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Edit', edit_blog_path(blog) %>&nbsp;&nbsp;&nbsp;&nbsp;
+	|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Destroy', blog, :confirm => 'Are you sure?', :method => :delete %>
+	<% end %>
+	</p>
 	
-	<h2><%=h blog.blog_title %></h2>
-  <h3 class="dateline"><%=h blog.user.username %> on &nbsp;&nbsp;<%=blog.posted_on%></h3>
-   <p class="intro"><%=h(blog.blog_desc).gsub(/\n/, '<br/>') %></p>
-   <p class="end-story-links"><%= link_to 'Show', blog %>
-   <% if getusertype == 'Admin' %>
-	| <%= link_to 'Edit', edit_blog_path(blog) %> |
-   <%= link_to 'Destroy', blog, :confirm => 'Are you sure?', :method => :delete %></p>
-   <% end %>
-<% end %>
-<br />
- <% if getusertype == 'Admin' %>
-<%= link_to 'New Blog', new_blog_path %>
-<% end %>
+	</div>
 </div>
-</div>
-<!--</div>-->
+<div style="clear: both;padding-bottom:5px;">&nbsp;</div>
+<% end %>

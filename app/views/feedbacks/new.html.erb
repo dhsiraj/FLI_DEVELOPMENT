@@ -1,9 +1,12 @@
+<% @formTitle="New Feedback"%>
 <% if getusertype != "" %>
-<%= render 'form' %>
-<% else %>
-<h3> <a href="javascript:void(0)" id="opener-login-commentlink">Login</a> to post feedback </h3>
-<% end %>
 <% if getusertype == "Admin" %>
-<p class="end-story-links"><%= link_to 'Back', feedbacks_path %></p>
+<%= link_to 'Back', feedbacks_path %>
 <% end %>
-
+<%= render 'form' %>
+<% if getusertype == "Admin" %>
+<%= link_to 'Back', feedbacks_path %>
+<% end %>
+<% else %>
+<a href="javascript:void(0)" id="opener-login-commentlink">Login</a> to post feedback 
+<% end %>

@@ -40,7 +40,7 @@ $(function() {
 	
 	$("#dialog-login").dialog({
 			autoOpen: false,
-			height: 250,
+			height: 285,
 			width:400,
 			show: 'blind',
 			modal: true,
@@ -63,7 +63,7 @@ $(function() {
 	
 	$("#dialog-register").dialog({
 			autoOpen: false,
-			height: 440,
+			height: 405,
 			width:400,
 			modal: true,
 			buttons: {
@@ -238,7 +238,7 @@ function validateLogin(){
 
 function logOut(){
 	var dataString = "action=logout";
-	$.ajax({type: "GET", url: "logout", data: dataString, contentType: "text/html", charset: "UTF-8",
+	$.ajax({type: "GET", url: "/logout", data: dataString, contentType: "text/html", charset: "UTF-8",
 	success: function(data) {
 		//alert("logout ajax called "+ data);
 		if(data){

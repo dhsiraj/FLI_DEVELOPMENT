@@ -1,21 +1,15 @@
-<ul id="footer-nav">
-    <li><a href="/home">Home</a></li>
+<ul>
+    <li><a href="/home">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</li>
     <% if getusertype == 'Admin' %>
-    <li><a href="/feedbacks">Feedback</a></li>
+    <li><a href="/feedbacks">Feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</li>
     <% else %>
-    <li><a href="/feedbacks/new">Feedback</a></li>
+    <li><a href="/feedbacks/new">Feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</li>
     <% end %>
-    <!--<li><a href="">Desclaimer</a></li>
-    <li><a href="">Site Map</a></li>-->
-    <li><a href="/top_links">Top Links</a></li>
-    <li><a href="contact">Contact Us</a></li>
-    <!--<li><a href="">Newsletter</a></li>
-    <li class="last"><a href="">Open Source</a></li>-->
+    <li><a href="/top_links">Top Links</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</li>
+    <li><a href="contact">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</li>
+    <li> <a href="http://www.fastlineinfo.com">Website design by Fast Line Info</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</li>
 </ul>
 
-<p class="copyright">Copyright 2010 Fast Line Info | 
-    <a href="http://www.fastlineinfo.com">Website design by FastLineInfo.com</a> |  
-    <a href="http://www.fastlineinfo.com/designers">Fast Line Info Web design Division</a>
-</p>
+<p class="copyright">Copyright 2010 Fast Line Info </p>
 <%= render :partial => "home/inc_inlineDialog" %>
 

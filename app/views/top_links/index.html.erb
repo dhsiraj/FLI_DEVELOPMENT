@@ -1,21 +1,21 @@
-<div id="content-inner">
-<div class="content-right">
 <% @top_links.each do |top_link| %>
+<div class="post">
+	<ul class="content_title"><%=h top_link.title %></ul>
+	<ul class="content_subtitle"><span style="font-weight:bold;color:#009909">Category : <%=h top_link.title %></span></ul>
+	<ul class="content_subtitle"><a href="<%=top_link.link_url %>" target="_new"><%=h top_link.link_url %></a></ul>
+	<div style="clear: both;">&nbsp;</div>
+	<div class="entry">
+	<p class="links">
+		<%= link_to 'Read More',top_link %>&nbsp;&nbsp;&nbsp;&nbsp;
+	<% if getusertype == 'Admin' %>
+	|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'New Toplink', new_top_link_path %>&nbsp;&nbsp;&nbsp;&nbsp;
+	|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Edit', edit_top_link_path(top_link) %>&nbsp;&nbsp;&nbsp;&nbsp;
+	|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Destroy', top_link, :confirm => 'Are you sure?', :method => :delete %>
+	<% end %>
+	</p>
 	
-	<h2><%=h top_link.title %></h2>
-  <h3 class="dateline"><%=h top_link.category %></h3>
-   <p class="intro"><a href="<%=top_link.link_url %>" target="_new"><%=h top_link.link_url %></a></p>
-   
-   <p class="end-story-links"><%= link_to 'Show', top_link %>
-   <% if getusertype == 'Admin' %>
-	| <%= link_to 'Edit', edit_top_link_path(top_link) %> |
-   <%= link_to 'Destroy', top_link, :confirm => 'Are you sure?', :method => :delete %></p>
-   <% end %>
-<% end %>
-<br />
- <% if getusertype == 'Admin' %>
-<%= link_to 'New Link', new_top_link_path %>
-<% end %>
+	</div>
 </div>
-</div>
+<div style="clear: both;padding-bottom:5px;">&nbsp;</div>
+<% end %>
 

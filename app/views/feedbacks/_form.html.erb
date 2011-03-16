@@ -19,16 +19,20 @@
   </li>
   <li>
     <%= f.label :feedback_title %>
+  </li>
+  <li>
     <%= f.text_field :feedback_title %>
   </li>
   <li>
     <%= f.label :feedback_detail %>
-    <%= f.text_area :feedback_detail,:size=>"50x8" %>
   </li>
   <li>
+    <%= f.text_area :feedback_detail,:size=>"65x8" %>
+  </li>
+  <!--<li>
     <%= f.label :ip_address %>
     <%= f.text_field :ip_address %>
-  </li>
+  </li>-->
   <li>
     <fieldset>
     <%= f.submit %>
