@@ -4,7 +4,8 @@ class CreateArticles < ActiveRecord::Migration
       t.string :art_title
       t.string :art_type
       t.string :art_source
-      t.text :art_desc
+      t.string :art_desc, :limit => 200
+      t.text :art_detail
       t.string :art_link
       t.integer :art_flag
       t.datetime :art_date
