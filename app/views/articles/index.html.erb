@@ -4,7 +4,7 @@
 	<ul class="content_subtitle">Posted by <%=h article.user.username %> on &nbsp;&nbsp;<%=article.art_date%></ul>
 	<div style="clear: both;">&nbsp;</div>
 	<div class="entry">
-	<p><%=h(article.art_desc).gsub(/\n/, '<br/>') %></p>
+	<p><%=h(article.art_detail).gsub(/\n/, '<br/>') %></p>
 	<p class="links">
 		<%= link_to 'Read More',article %>&nbsp;&nbsp;&nbsp;&nbsp;
 	<% if getusertype == 'Admin' %>
