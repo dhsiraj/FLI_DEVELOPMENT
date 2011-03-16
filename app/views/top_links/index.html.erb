@@ -18,4 +18,8 @@
 </div>
 <div style="clear: both;padding-bottom:5px;">&nbsp;</div>
 <% end %>
+<% if getusertype == 'Admin' %>
+&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'New Toplink', new_top_link_path %>&nbsp;&nbsp;&nbsp;&nbsp;
+<% end %>
+
 
