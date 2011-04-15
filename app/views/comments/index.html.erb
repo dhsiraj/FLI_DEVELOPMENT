@@ -15,8 +15,11 @@
 
 <% @comments.each do |comment| %>
   <tr>
-    <td><%= comment.blog.blog_title %></td>
-    <td><%= comment.user.username %></td>
+    <td><%= #comment.blog.blog_title
+    %></td>
+    <td><%= #comment.user.username
+    %>
+    </td>
     <td><%= comment.comment_title %></td>
     <td><%= h(comment.comment_detail).gsub(/\n/, '<br/>') %></td>
     <td><%= comment.ip_address %></td>

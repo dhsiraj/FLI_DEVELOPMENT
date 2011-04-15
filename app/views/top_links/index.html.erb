@@ -1,9 +1,9 @@
 <% @top_links.each do |top_link| %>
 <div class="post">
 	<ul class="content_title"><%=h top_link.title %></ul>
-	<ul class="content_subtitle"><span style="font-weight:bold;color:#009909">Category : <%=h top_link.title %></span></ul>
+	<ul class="content_subtitle"><span>Category : <%=h top_link.title %></span></ul>
 	<ul class="content_subtitle"><a href="<%=top_link.link_url %>" target="_new"><%=h top_link.link_url %></a></ul>
-	<div style="clear: both;">&nbsp;</div>
+	<!--<div style="clear: both;">&nbsp;</div>-->
 	<div class="entry">
 	<p class="links">
 		<%= link_to 'Read More',top_link %>&nbsp;&nbsp;&nbsp;&nbsp;

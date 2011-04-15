@@ -1,10 +1,10 @@
 <% @feedbacks.each do |feedback| %>
 <div class="post">
 	<ul class="content_title"><%=h feedback.feedback_title %></ul>
-	<ul class="content_subtitle">Posted by <%=h feedback.user.username %> on &nbsp;&nbsp;<%=feedback.created_at%></ul>
-	<div style="clear: both;">&nbsp;</div>
+	<ul class="content_subtitle"><span>Posted by <%=h feedback.user.username %> on &nbsp;&nbsp;<%=feedback.created_at%></span></ul>
+	<!--<div style="clear: both;">&nbsp;</div>-->
 	<div class="entry">
-	<p><%=h(feedback.feedback_detail).gsub(/\n/, '<br/>') %></p>
+	<p class="post_detail"><%=h(feedback.feedback_detail).gsub(/\n/, '<br/>') %></p>
 	<p class="links">
 		<%= link_to 'Read More',feedback %>&nbsp;&nbsp;&nbsp;&nbsp;
 	<% if getusertype == 'Admin' %>

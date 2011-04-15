@@ -1,10 +1,10 @@
 <% @todos.each do |todo| %>
 <div class="post">
 	<ul class="content_title"><%=h todo.title %></ul>
-	<ul class="content_subtitle">Priority <span style="font-weight:bold;color:#009909"><%=h todo.priority %></span> on &nbsp;&nbsp;<%=todo.todo_date%></ul>
-	<div style="clear: both;">&nbsp;</div>
+	<ul class="content_subtitle"><span>Priority <span style="font-weight:bold;color:#009909"><%=h todo.priority %></span> on &nbsp;&nbsp;<%=todo.todo_date%></span></ul>
+	<!--<div style="clear: both;">&nbsp;</div>-->
 	<div class="entry">
-	<p><%=h(todo.desc).gsub(/\n/, '<br/>') %></p>
+	<p class="post_detail"><%=h(todo.desc).gsub(/\n/, '<br/>') %></p>
 	<p class="links">
 		<%= link_to 'Read More',todo %>&nbsp;&nbsp;&nbsp;&nbsp;
 	<% if getusertype == 'Admin' %>
